@@ -6,11 +6,11 @@ public class Player : MonoBehaviour
 {
     // Referenciando o Rigidbody para manipular a física
     private Rigidbody2D rig;
-
     public Animator anim;
+    public Transform point;
 
+    public float radius;
     public float speed;
-
     public float JumpForce;
 
     private bool isJumping;
@@ -84,6 +84,16 @@ public class Player : MonoBehaviour
                 doubleJump = false;
             }
             
+        }
+    }
+
+    void Attack()
+    {
+        Collider2D hit = Physics2D.OverlapCircle(point.position, radius);
+
+        if(hit != null)
+        {
+
         }
     }
 
